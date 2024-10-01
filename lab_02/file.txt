@@ -1,0 +1,17 @@
+gcc task_5.c
+./a.out
+Child: pid = 19376, ppid = 19351, gr = 19344
+Child №1 hadn't signal and didn't sent massage to parent!
+Parent: pid = 19351, childpid = 19376, gr = 19344
+Parent hadn't massage from child №1
+exited, status=0
+Catch signal with number = 20.
+Child: pid = 19401, ppid = 19351, gr = 19344
+Child №2 sent massage to parent!
+Parent: pid = 19351, childpid = 19376, gr = 19344
+Parent hadn't massage from child №1
+exited, status=0
+Catch signal with number = 20.
+Parent: pid = 19351, childpid = 19401, gr = 19344
+Parent received massage: Hi number 2)
+exited, status=0
