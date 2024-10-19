@@ -10,73 +10,80 @@
 
 int main(void)
 {
-	pid_t arr_childpid[N];
+	pid_t cpid[N];
 
-	char mess_give[N][SIZE_OF_BUF] = {"AAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "BBB"};
-	char mess_take[N + 1][SIZE_OF_BUF];
+	const char *mess_give[N + 1] = {"AAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "BBB"};
+	char *mess_take = malloc(SIZE_OF_BUF);
 
-	int fd[2];
+	int fd[N+1];
 	// Создаем канал (fd[0] - чтение, fd[1] - запись)
     if (pipe(fd) == -1)
 	{
         perror("pipe");
         exit(EXIT_FAILURE);
     }
-
+	// цикл создает дочерние процессы с помощью fork()
 	for (int i = 0; i < N; i++)
 	{
-		arr_childpid[i] = fork();
-		if (arr_childpid[i] == -1)
+		cpid[i] = fork();
+		if (cpid[i] == -1)
 		{
-            perror("fork");
+            perror("Error fork");
        		exit(EXIT_FAILURE);
       	}
-		if (arr_childpid[i] == 0)
+		if (cpid[i] == 0)
 		{
 			/*child*/
-			printf("Child: pid = %d, ppid = %d, gr = %d\n", getpid(), getppid(), getpgrp());	
 			// Закрываем конец чтения
 			close(fd[0]);
-            write(fd[1], mess_give[i], strlen(mess_give[i]) + 1);
-			// Закрываем конец записи
-            close(fd[1]);
-			printf("Child #%d sent massage to parent!\n", i + 1);
+			// записываем сообщение
+            write(fd[1], (mess_give)[i], strlen((mess_give)[i]));
+			printf("Child pid = %d sent massage %s to parent ppid = %d\n", getpid(), (mess_give)[i], getppid());
             exit(EXIT_SUCCESS); 
 		}
-		else
-		{
-			/*parent*/
-			printf("Parent: pid = %d, childpid = %d, gr = %d\n", getpid(), arr_childpid[i], getpgrp());
-			
-			int wait_status;
-			pid_t res_waitpid = wait(&wait_status);
-			// Читаем сообщение
-            read(fd[0], mess_take[i], sizeof(mess_take[i]));
-            printf("Parent received massage: %s\n", mess_take[i]);
-    		
-			if (res_waitpid == -1)
-			{
-                perror("waitpid");
-                exit(EXIT_FAILURE);
-            }
-            if (WIFEXITED(wait_status))
-			{
-                printf("exited, status=%d\n", WEXITSTATUS(wait_status));
-            }
-			else if (WIFSIGNALED(wait_status))
-			{
-                printf("killed by signal %d\n", WTERMSIG(wait_status));
-        	}
-			else if (WIFSTOPPED(wait_status))
-			{
-                printf("stopped by signal %d\n", WSTOPSIG(wait_status));
-           	}
-			else if (WIFCONTINUED(wait_status))
-			{
-            	printf("continued\n");
-            }
-		}
 	}
+	// родительский процесс ждет завершения каждого дочернего процесса с помощью wait()
+	for (int i = 0; i < N; i++)
+	{
+		/*parent*/
+		int wait_status;
+		pid_t res_waitpid = waitpid(cpid[i], &wait_status, WUNTRACED | WCONTINUED); 		
+		if (res_waitpid == -1)
+		{
+            perror("waitpid");
+            exit(EXIT_FAILURE);
+        }
+        if (WIFEXITED(wait_status))
+		{
+            printf("exited, status=%d\n", WEXITSTATUS(wait_status));
+        }
+		else if (WIFSIGNALED(wait_status))
+		{
+            printf("killed by signal %d\n", WTERMSIG(wait_status));
+        }
+		else if (WIFSTOPPED(wait_status))
+		{
+            printf("stopped by signal %d\n", WSTOPSIG(wait_status));
+        }
+		else if (WIFCONTINUED(wait_status))
+		{
+            printf("continued\n");
+        }
+	}
+
+	// Закрываем конец записи
+    close(fd[1]);
+	for (int i = 0; i < N; i++)
+	{
+		memset(mess_take, 0, SIZE_OF_BUF); // Обнуляем буфер    перед чтением
+		// Читаем сообщение
+        read(fd[0], mess_take, strlen((mess_give)[i]));
+        printf("Parent received massage: %s\n", mess_take);
+	}
+	// контрольное третье чтение
+	mess_take[0] = '\0';
+	read(fd[0], mess_take, sizeof(mess_take));
+	printf("Parent received massage: %s\n", mess_take);
 
 	return 0;
 }
