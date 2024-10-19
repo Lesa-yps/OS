@@ -8,6 +8,8 @@
 
 int main(void)
 {
+	pid_t w;
+    int wstatus;
 	pid_t arr_childpid[N];
 	const char *exec_programs[N] = {"./sum.exe", "./two_degree.exe"};
 	for (int i = 0; i < N; i++)
@@ -26,32 +28,24 @@ int main(void)
             exit(EXIT_FAILURE);		
 		}
 		else
-		{
 			printf("Parent: pid = %d, childpid = %d, gr = %d\n", getpid(), arr_childpid[i], getpgrp());
-			int wait_status;
-			pid_t res_waitpid = wait(&wait_status);
-    		if (res_waitpid == -1)
-			{
+	}
+	for (int i = 0; i < N; i++) {
+        do {
+            w = waitpid(arr_childpid[i], &wstatus, WUNTRACED | WCONTINUED);
+            if (w == -1) {
                 perror("waitpid");
                 exit(EXIT_FAILURE);
             }
-            if (WIFEXITED(wait_status))
-			{
-                printf("exited, status=%d\n", WEXITSTATUS(wait_status));
+
+            if (WIFEXITED(wstatus)) {
+                printf("exited, status=%d\n", WEXITSTATUS(wstatus));
+            } else if (WIFSIGNALED(wstatus)) {
+                printf("killed by signal %d\n", WTERMSIG(wstatus));
+            } else if (WIFSTOPPED(wstatus)) {
+                printf("stopped by signal %d\n", WSTOPSIG(wstatus));
             }
-			else if (WIFSIGNALED(wait_status))
-			{
-                printf("killed by signal %d\n", WTERMSIG(wait_status));
-        	}
-			else if (WIFSTOPPED(wait_status))
-			{
-                printf("stopped by signal %d\n", WSTOPSIG(wait_status));
-           	}
-			else if (WIFCONTINUED(wait_status))
-			{
-            	printf("continued\n");
-            }
-		}
-	}
+        } while (!WIFEXITED(wstatus) && !WIFSIGNALED(wstatus));
+    }
 	return 0;
 }

@@ -12,12 +12,12 @@ int main(void)
 {
 	pid_t arr_childpid[N];
 
-	char mess_give[N][SIZE_OF_BUF] = {"Hello from child 1!", "Hi number 2)"};
-	char mess_take[N][SIZE_OF_BUF];
+	char mess_give[N][SIZE_OF_BUF] = {"AAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "BBB"};
+	char mess_take[N + 1][SIZE_OF_BUF];
 
-	int file_desc[2];
-	// Создаем канал (file_desc[0] - чтение, file_desc[1] - запись)
-    if (pipe(file_desc) == -1)
+	int fd[2];
+	// Создаем канал (fd[0] - чтение, fd[1] - запись)
+    if (pipe(fd) == -1)
 	{
         perror("pipe");
         exit(EXIT_FAILURE);
@@ -36,10 +36,10 @@ int main(void)
 			/*child*/
 			printf("Child: pid = %d, ppid = %d, gr = %d\n", getpid(), getppid(), getpgrp());	
 			// Закрываем конец чтения
-			close(file_desc[0]);
-            write(file_desc[1], mess_give[i], strlen(mess_give[i]) + 1);
+			close(fd[0]);
+            write(fd[1], mess_give[i], strlen(mess_give[i]) + 1);
 			// Закрываем конец записи
-            close(file_desc[1]);
+            close(fd[1]);
 			printf("Child #%d sent massage to parent!\n", i + 1);
             exit(EXIT_SUCCESS); 
 		}
@@ -51,7 +51,7 @@ int main(void)
 			int wait_status;
 			pid_t res_waitpid = wait(&wait_status);
 			// Читаем сообщение
-            read(file_desc[0], mess_take[i], sizeof(mess_take[i]));
+            read(fd[0], mess_take[i], sizeof(mess_take[i]));
             printf("Parent received massage: %s\n", mess_take[i]);
     		
 			if (res_waitpid == -1)
@@ -77,9 +77,6 @@ int main(void)
             }
 		}
 	}
-
-	// Закрываем конец чтения после завершения работы
-    close(file_desc[0]);
 
 	return 0;
 }

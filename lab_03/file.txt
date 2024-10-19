@@ -1,0 +1,384 @@
+   PPID     PID    PGID     SID TTY        TPGID STAT   UID   TIME COMMAND
+      0       1       1       1 ?             -1 Ss       0   0:03 /sbin/init splash
+      0       2       0       0 ?             -1 S        0   0:00 [kthreadd]
+      2       3       0       0 ?             -1 S        0   0:00 [pool_workqueue_release]
+      2       4       0       0 ?             -1 I<       0   0:00 [kworker/R-rcu_g]
+      2       5       0       0 ?             -1 I<       0   0:00 [kworker/R-rcu_p]
+      2       6       0       0 ?             -1 I<       0   0:00 [kworker/R-slub_]
+      2       7       0       0 ?             -1 I<       0   0:00 [kworker/R-netns]
+      2       9       0       0 ?             -1 I<       0   0:00 [kworker/0:0H-events_highpri]
+      2      12       0       0 ?             -1 I<       0   0:00 [kworker/R-mm_pe]
+      2      13       0       0 ?             -1 I        0   0:00 [rcu_tasks_kthread]
+      2      14       0       0 ?             -1 I        0   0:00 [rcu_tasks_rude_kthread]
+      2      15       0       0 ?             -1 I        0   0:00 [rcu_tasks_trace_kthread]
+      2      16       0       0 ?             -1 S        0   0:00 [ksoftirqd/0]
+      2      17       0       0 ?             -1 I        0   0:33 [rcu_preempt]
+      2      18       0       0 ?             -1 S        0   0:00 [migration/0]
+      2      19       0       0 ?             -1 S        0   0:00 [idle_inject/0]
+      2      20       0       0 ?             -1 S        0   0:00 [cpuhp/0]
+      2      21       0       0 ?             -1 S        0   0:00 [cpuhp/2]
+      2      22       0       0 ?             -1 S        0   0:00 [idle_inject/2]
+      2      23       0       0 ?             -1 S        0   0:00 [migration/2]
+      2      24       0       0 ?             -1 S        0   0:00 [ksoftirqd/2]
+      2      26       0       0 ?             -1 I<       0   0:00 [kworker/2:0H-events_highpri]
+      2      27       0       0 ?             -1 S        0   0:00 [cpuhp/4]
+      2      28       0       0 ?             -1 S        0   0:00 [idle_inject/4]
+      2      29       0       0 ?             -1 S        0   0:00 [migration/4]
+      2      30       0       0 ?             -1 S        0   0:00 [ksoftirqd/4]
+      2      32       0       0 ?             -1 I<       0   0:00 [kworker/4:0H-events_highpri]
+      2      33       0       0 ?             -1 S        0   0:00 [cpuhp/6]
+      2      34       0       0 ?             -1 S        0   0:00 [idle_inject/6]
+      2      35       0       0 ?             -1 S        0   0:00 [migration/6]
+      2      36       0       0 ?             -1 S        0   0:00 [ksoftirqd/6]
+      2      38       0       0 ?             -1 I<       0   0:00 [kworker/6:0H-events_highpri]
+      2      39       0       0 ?             -1 S        0   0:00 [cpuhp/8]
+      2      40       0       0 ?             -1 S        0   0:00 [idle_inject/8]
+      2      41       0       0 ?             -1 S        0   0:04 [migration/8]
+      2      42       0       0 ?             -1 S        0   0:00 [ksoftirqd/8]
+      2      44       0       0 ?             -1 I<       0   0:00 [kworker/8:0H-events_highpri]
+      2      45       0       0 ?             -1 S        0   0:00 [cpuhp/9]
+      2      46       0       0 ?             -1 S        0   0:00 [idle_inject/9]
+      2      47       0       0 ?             -1 S        0   0:03 [migration/9]
+      2      48       0       0 ?             -1 S        0   0:00 [ksoftirqd/9]
+      2      50       0       0 ?             -1 I<       0   0:00 [kworker/9:0H-events_highpri]
+      2      51       0       0 ?             -1 S        0   0:00 [cpuhp/10]
+      2      52       0       0 ?             -1 S        0   0:00 [idle_inject/10]
+      2      53       0       0 ?             -1 S        0   0:02 [migration/10]
+      2      54       0       0 ?             -1 S        0   0:00 [ksoftirqd/10]
+      2      56       0       0 ?             -1 I<       0   0:00 [kworker/10:0H-events_highpri]
+      2      57       0       0 ?             -1 S        0   0:00 [cpuhp/11]
+      2      58       0       0 ?             -1 S        0   0:00 [idle_inject/11]
+      2      59       0       0 ?             -1 S        0   0:01 [migration/11]
+      2      60       0       0 ?             -1 S        0   0:00 [ksoftirqd/11]
+      2      62       0       0 ?             -1 I<       0   0:00 [kworker/11:0H-events_highpri]
+      2      63       0       0 ?             -1 S        0   0:00 [cpuhp/12]
+      2      64       0       0 ?             -1 S        0   0:00 [idle_inject/12]
+      2      65       0       0 ?             -1 S        0   0:01 [migration/12]
+      2      66       0       0 ?             -1 S        0   0:00 [ksoftirqd/12]
+      2      68       0       0 ?             -1 I<       0   0:00 [kworker/12:0H-events_highpri]
+      2      69       0       0 ?             -1 S        0   0:00 [cpuhp/13]
+      2      70       0       0 ?             -1 S        0   0:00 [idle_inject/13]
+      2      71       0       0 ?             -1 S        0   0:01 [migration/13]
+      2      72       0       0 ?             -1 S        0   0:00 [ksoftirqd/13]
+      2      74       0       0 ?             -1 I<       0   0:00 [kworker/13:0H-events_highpri]
+      2      75       0       0 ?             -1 S        0   0:00 [cpuhp/14]
+      2      76       0       0 ?             -1 S        0   0:00 [idle_inject/14]
+      2      77       0       0 ?             -1 S        0   0:01 [migration/14]
+      2      78       0       0 ?             -1 S        0   0:00 [ksoftirqd/14]
+      2      80       0       0 ?             -1 I<       0   0:00 [kworker/14:0H-events_highpri]
+      2      81       0       0 ?             -1 S        0   0:00 [cpuhp/15]
+      2      82       0       0 ?             -1 S        0   0:00 [idle_inject/15]
+      2      83       0       0 ?             -1 S        0   0:01 [migration/15]
+      2      84       0       0 ?             -1 S        0   0:00 [ksoftirqd/15]
+      2      86       0       0 ?             -1 I<       0   0:00 [kworker/15:0H-events_highpri]
+      2      87       0       0 ?             -1 S        0   0:00 [cpuhp/1]
+      2      88       0       0 ?             -1 S        0   0:00 [idle_inject/1]
+      2      89       0       0 ?             -1 S        0   0:00 [migration/1]
+      2      90       0       0 ?             -1 S        0   0:00 [ksoftirqd/1]
+      2      92       0       0 ?             -1 I<       0   0:00 [kworker/1:0H-events_highpri]
+      2      93       0       0 ?             -1 S        0   0:00 [cpuhp/3]
+      2      94       0       0 ?             -1 S        0   0:00 [idle_inject/3]
+      2      95       0       0 ?             -1 S        0   0:00 [migration/3]
+      2      96       0       0 ?             -1 S        0   0:00 [ksoftirqd/3]
+      2      98       0       0 ?             -1 I<       0   0:00 [kworker/3:0H-events_highpri]
+      2      99       0       0 ?             -1 S        0   0:00 [cpuhp/5]
+      2     100       0       0 ?             -1 S        0   0:00 [idle_inject/5]
+      2     101       0       0 ?             -1 S        0   0:00 [migration/5]
+      2     102       0       0 ?             -1 S        0   0:00 [ksoftirqd/5]
+      2     104       0       0 ?             -1 I<       0   0:00 [kworker/5:0H-kblockd]
+      2     105       0       0 ?             -1 S        0   0:00 [cpuhp/7]
+      2     106       0       0 ?             -1 S        0   0:00 [idle_inject/7]
+      2     107       0       0 ?             -1 S        0   0:00 [migration/7]
+      2     108       0       0 ?             -1 S        0   0:00 [ksoftirqd/7]
+      2     110       0       0 ?             -1 I<       0   0:00 [kworker/7:0H-events_highpri]
+      2     111       0       0 ?             -1 S        0   0:00 [kdevtmpfs]
+      2     112       0       0 ?             -1 I<       0   0:00 [kworker/R-inet_]
+      2     113       0       0 ?             -1 S        0   0:00 [kauditd]
+      2     115       0       0 ?             -1 S        0   0:00 [khungtaskd]
+      2     116       0       0 ?             -1 S        0   0:00 [oom_reaper]
+      2     118       0       0 ?             -1 I<       0   0:00 [kworker/R-write]
+      2     119       0       0 ?             -1 S        0   0:01 [kcompactd0]
+      2     120       0       0 ?             -1 SN       0   0:00 [ksmd]
+      2     122       0       0 ?             -1 SN       0   0:00 [khugepaged]
+      2     123       0       0 ?             -1 I<       0   0:00 [kworker/R-kinte]
+      2     124       0       0 ?             -1 I<       0   0:00 [kworker/R-kbloc]
+      2     125       0       0 ?             -1 I<       0   0:00 [kworker/R-blkcg]
+      2     126       0       0 ?             -1 S        0   0:00 [irq/9-acpi]
+      2     128       0       0 ?             -1 I<       0   0:00 [kworker/R-tpm_d]
+      2     129       0       0 ?             -1 I<       0   0:00 [kworker/R-ata_s]
+      2     130       0       0 ?             -1 I<       0   0:00 [kworker/R-md]
+      2     131       0       0 ?             -1 I<       0   0:00 [kworker/R-md_bi]
+      2     132       0       0 ?             -1 I<       0   0:00 [kworker/R-edac-]
+      2     133       0       0 ?             -1 I<       0   0:00 [kworker/R-devfr]
+      2     134       0       0 ?             -1 S        0   0:00 [watchdogd]
+      2     136       0       0 ?             -1 I<       0   0:00 [kworker/10:1H-kblockd]
+      2     138       0       0 ?             -1 S        0   0:00 [kswapd0]
+      2     139       0       0 ?             -1 S        0   0:00 [ecryptfs-kthread]
+      2     140       0       0 ?             -1 I<       0   0:00 [kworker/R-kthro]
+      2     141       0       0 ?             -1 I<       0   0:00 [kworker/R-acpi_]
+      2     143       0       0 ?             -1 S        0   0:00 [hwrng]
+      2     144       0       0 ?             -1 I<       0   0:00 [kworker/R-hfi-u]
+      2     145       0       0 ?             -1 I<       0   0:00 [kworker/R-mld]
+      2     146       0       0 ?             -1 I<       0   0:00 [kworker/9:1H-kblockd]
+      2     147       0       0 ?             -1 I<       0   0:00 [kworker/R-ipv6_]
+      2     154       0       0 ?             -1 I<       0   0:00 [kworker/R-kstrp]
+      2     174       0       0 ?             -1 I<       0   0:00 [kworker/R-charg]
+      2     200       0       0 ?             -1 I<       0   0:00 [kworker/4:1H-kblockd]
+      2     230       0       0 ?             -1 I<       0   0:00 [kworker/5:1H]
+      2     252       0       0 ?             -1 I<       0   0:00 [kworker/0:1H-events_highpri]
+      2     253       0       0 ?             -1 I<       0   0:00 [kworker/1:1H-kblockd]
+      2     254       0       0 ?             -1 I<       0   0:01 [kworker/14:1H-kblockd]
+      2     256       0       0 ?             -1 I<       0   0:01 [kworker/15:1H-events_highpri]
+      2     257       0       0 ?             -1 I<       0   0:00 [kworker/2:1H-events_highpri]
+      2     258       0       0 ?             -1 I<       0   0:00 [kworker/6:1H-events_highpri]
+      2     259       0       0 ?             -1 I<       0   0:00 [kworker/3:1H-events_highpri]
+      2     260       0       0 ?             -1 I<       0   0:00 [kworker/11:1H-kblockd]
+      2     261       0       0 ?             -1 I<       0   0:00 [kworker/8:1H-kblockd]
+      2     262       0       0 ?             -1 I<       0   0:00 [kworker/12:1H-kblockd]
+      2     263       0       0 ?             -1 I<       0   0:00 [kworker/13:1H-events_highpri]
+      2     264       0       0 ?             -1 I<       0   0:00 [kworker/7:1H-kblockd]
+      2     287       0       0 ?             -1 I<       0   0:00 [kworker/R-nvme-]
+      2     288       0       0 ?             -1 I<       0   0:00 [kworker/R-nvme-]
+      2     289       0       0 ?             -1 I<       0   0:00 [kworker/R-nvme-]
+      2     290       0       0 ?             -1 I<       0   0:00 [kworker/R-nvme-]
+      2     291       0       0 ?             -1 S        0   0:50 [irq/141-GXTP7863:00]
+      2     334       0       0 ?             -1 S        0   0:02 [jbd2/nvme0n1p8-8]
+      2     335       0       0 ?             -1 I<       0   0:00 [kworker/R-ext4-]
+      1     405     405     405 ?             -1 Ss       0   0:01 /usr/lib/systemd/systemd-journald
+      1     429     429     429 ?             -1 Ss       0   0:00 /usr/lib/systemd/systemd-udevd
+      2     502       0       0 ?             -1 S        0   0:00 [psimon]
+      2     653       0       0 ?             -1 I<       0   0:00 [kworker/R-cfg80]
+      2     657       0       0 ?             -1 S        0   0:34 [irq/159-iwlwifi:default_queue]
+      2     658       0       0 ?             -1 S        0   0:02 [irq/160-iwlwifi:queue_1]
+      2     659       0       0 ?             -1 S        0   0:03 [irq/161-iwlwifi:queue_2]
+      2     660       0       0 ?             -1 S        0   0:03 [irq/162-iwlwifi:queue_3]
+      2     661       0       0 ?             -1 S        0   0:04 [irq/163-iwlwifi:queue_4]
+      2     662       0       0 ?             -1 S        0   0:00 [irq/164-iwlwifi:queue_5]
+      2     663       0       0 ?             -1 S        0   0:03 [irq/165-iwlwifi:queue_6]
+      2     664       0       0 ?             -1 S        0   0:04 [irq/166-iwlwifi:queue_7]
+      2     665       0       0 ?             -1 S        0   0:01 [irq/167-iwlwifi:queue_8]
+      2     666       0       0 ?             -1 S        0   0:01 [irq/168-iwlwifi:queue_9]
+      2     667       0       0 ?             -1 S        0   0:02 [irq/169-iwlwifi:queue_10]
+      2     668       0       0 ?             -1 S        0   0:02 [irq/170-iwlwifi:queue_11]
+      2     669       0       0 ?             -1 S        0   0:03 [irq/171-iwlwifi:queue_12]
+      2     670       0       0 ?             -1 S        0   0:02 [irq/172-iwlwifi:queue_13]
+      2     671       0       0 ?             -1 S        0   0:03 [irq/173-iwlwifi:queue_14]
+      2     672       0       0 ?             -1 S        0   0:00 [irq/174-iwlwifi:exception]
+      2     677       0       0 ?             -1 I<       0   0:00 [kworker/R-crypt]
+      2     695       0       0 ?             -1 S        0   0:00 [irq/16-processor_thermal_device_pci]
+      2     710       0       0 ?             -1 I<       0   0:00 [kworker/R-ttm]
+      2     712       0       0 ?             -1 S        0   0:00 [card1-crtc0]
+      2     713       0       0 ?             -1 S        0   0:00 [card1-crtc1]
+      2     714       0       0 ?             -1 S        0   0:00 [card1-crtc2]
+      2     715       0       0 ?             -1 S        0   0:00 [card1-crtc3]
+      1     869     869     869 ?             -1 Ss     990   0:09 /usr/lib/systemd/systemd-oomd
+      1     870     870     870 ?             -1 Ss     991   0:01 /usr/lib/systemd/systemd-resolved
+      1     871     871     871 ?             -1 Ssl    996   0:00 /usr/lib/systemd/systemd-timesyncd
+      1     922     922     922 ?             -1 Ss     108   0:00 avahi-daemon: running [olesya-BRN-GXXX.local]
+      1     923     923     923 ?             -1 Ss       0   0:00 /usr/libexec/bluetooth/bluetoothd
+      1     924     924     924 ?             -1 Ss     101   0:03 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+      1     927     927     927 ?             -1 Ssl    987   0:00 /usr/libexec/gnome-remote-desktop-daemon --system
+      1     930     930     930 ?             -1 Ss       0   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+      1     931     931     931 ?             -1 Ssl    988   0:00 /usr/lib/polkit-1/polkitd --no-debug
+      1     933     933     933 ?             -1 Ssl      0   0:00 /usr/libexec/power-profiles-daemon
+      1     941     941     941 ?             -1 Ssl      0   0:03 /usr/lib/snapd/snapd
+      1     946     946     946 ?             -1 S<s      0   0:00 /usr/lib/systemd/systemd-logind
+      1     949     949     949 ?             -1 Ssl      0   0:00 /usr/libexec/accounts-daemon
+      1     950     950     950 ?             -1 Ss       0   0:00 /usr/sbin/cron -f -P
+      1     953     953     953 ?             -1 Ssl      0   0:00 /usr/libexec/switcheroo-control
+      1     957     957     957 ?             -1 Ssl      0   0:05 /usr/sbin/thermald --systemd --dbus-enable --adaptive
+      1     962     962     962 ?             -1 Ssl      0   0:00 /usr/libexec/udisks2/udisksd
+      1     977     977     977 ?             -1 Ssl      0   0:04 /usr/sbin/NetworkManager --no-daemon
+    922     978     922     922 ?             -1 S      108   0:00 avahi-daemon: chroot helper
+      1     979     979     979 ?             -1 Ss       0   0:00 /usr/sbin/wpa_supplicant -u -s -O DIR=/run/wpa_supplicant GROUP=netdev
+      1    1006    1006    1006 ?             -1 Ssl    102   0:00 /usr/sbin/rsyslogd -n -iNONE
+      1    1087    1087    1087 ?             -1 Ssl      0   0:00 /usr/sbin/ModemManager
+      1    1102    1102    1102 ?             -1 Ssl      0   0:01 /usr/libexec/upowerd
+      2    1201       0       0 ?             -1 S        0   0:00 [irq/176-AudioDSP]
+      1    1445    1445    1445 ?             -1 Ssl      0   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+      1    1462    1462    1462 ?             -1 Ssl      0   0:00 /usr/sbin/gdm3
+      1    1471    1471    1471 ?             -1 Ss     122   0:00 /usr/lib/postgresql/16/bin/postgres -D /var/lib/postgresql/16/main -c config_file=/etc/postgresql/16/main/postgresql.conf
+   1471    1472    1472    1472 ?             -1 Ss     122   0:00 postgres: 16/main: checkpointer 
+   1471    1473    1473    1473 ?             -1 Ss     122   0:00 postgres: 16/main: background writer 
+   1471    1475    1475    1475 ?             -1 Ss     122   0:00 postgres: 16/main: walwriter 
+   1471    1476    1476    1476 ?             -1 Ss     122   0:00 postgres: 16/main: autovacuum launcher 
+   1471    1477    1477    1477 ?             -1 Ss     122   0:00 postgres: 16/main: logical replication launcher 
+      2    1500       0       0 ?             -1 S        0   0:00 [psimon]
+      1    1536    1536    1536 ?             -1 SNsl   117   0:00 /usr/libexec/rtkit-daemon
+      2    1665       0       0 ?             -1 S<       0   0:00 [krfcommd]
+      1    1671    1671    1671 ?             -1 Ssl    118   0:00 /usr/libexec/colord
+   1462    2032    1462    1462 ?             -1 Sl       0   0:00 gdm-session-worker [pam/gdm-password]
+      1    2042    2042    2042 ?             -1 Ss     106   0:00 /usr/sbin/kerneloops --test
+      1    2045    2045    2045 ?             -1 Ss     106   0:00 /usr/sbin/kerneloops
+      1    2076    2076    2076 ?             -1 Ss    1000   0:02 /usr/lib/systemd/systemd --user
+   2076    2083    2076    2076 ?             -1 S     1000   0:00 (sd-pam)
+   2076    2092    2092    2092 ?             -1 S<sl  1000   1:11 /usr/bin/pipewire
+   2076    2093    2093    2093 ?             -1 Ssl   1000   0:00 /usr/bin/pipewire -c filter-chain.conf
+   2076    2094    2094    2094 ?             -1 Ss    1000   0:00 /snap/snapd-desktop-integration/247/usr/bin/snapd-desktop-integration
+   2076    2096    2096    2096 ?             -1 S<sl  1000   0:01 /usr/bin/wireplumber
+   2076    2098    2098    2098 ?             -1 S<sl  1000   1:50 /usr/bin/pipewire-pulse
+   2076    2099    2099    2099 ?             -1 SLsl  1000   0:00 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring
+   2076    2116    2116    2116 ?             -1 Ss    1000   0:03 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+   2076    2155    2155    2155 ?             -1 Ssl   1000   0:00 /usr/libexec/xdg-document-portal
+   2076    2165    2165    2165 ?             -1 Ssl   1000   0:00 /usr/libexec/xdg-permission-store
+   2155    2174    2174    2174 ?             -1 Ss       0   0:00 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+   2032    2207    2207    2207 tty2        2207 Ssl+  1000   0:00 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+   2207    2215    2207    2207 tty2        2207 Sl+   1000   0:00 /usr/libexec/gnome-session-binary --session=ubuntu
+   2076    2266    2266    2266 ?             -1 Ssl   1000   0:00 /usr/libexec/gcr-ssh-agent --base-dir /run/user/1000/gcr
+   2076    2268    2268    2268 ?             -1 Ssl   1000   0:00 /usr/libexec/gnome-session-ctl --monitor
+   2076    2283    2283    2283 ?             -1 Ssl   1000   0:00 /usr/libexec/gvfsd
+   2076    2291    2283    2283 ?             -1 Sl    1000   0:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+   2076    2294    2294    2294 ?             -1 Ssl   1000   0:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+   2076    2342    2342    2342 ?             -1 Ssl   1000  12:56 /usr/bin/gnome-shell
+   2294    2343    2294    2294 ?             -1 Sl    1000   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+   2343    2357    2294    2294 ?             -1 S     1000   0:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus
+   2076    2434    2294    2294 ?             -1 Sl    1000   0:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+   2076    2464    2116    2116 ?             -1 Sl    1000   0:00 /usr/libexec/gnome-shell-calendar-server
+   2076    2472    2472    2472 ?             -1 Ssl   1000   0:00 /usr/libexec/evolution-source-registry
+   2094    2473    2094    2094 ?             -1 Sl    1000   0:00 /snap/snapd-desktop-integration/247/usr/bin/snapd-desktop-integration
+   2076    2475    2475    2475 ?             -1 Ssl   1000   0:00 /usr/libexec/dconf-service
+   2076    2490    2116    2116 ?             -1 Sl    1000   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+   2076    2510    2510    2510 ?             -1 Ssl   1000   0:08 /usr/bin/ibus-daemon --panel disable
+   2076    2511    2511    2511 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-a11y-settings
+   2076    2512    2512    2512 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-color
+   2076    2513    2513    2513 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-datetime
+   2076    2515    2515    2515 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-housekeeping
+   2076    2518    2518    2518 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-keyboard
+   2076    2520    2520    2520 ?             -1 Ssl   1000   0:01 /usr/libexec/gsd-media-keys
+   2076    2522    2522    2522 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-power
+   2076    2524    2524    2524 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-print-notifications
+   2076    2525    2525    2525 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-rfkill
+   2076    2530    2530    2530 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-screensaver-proxy
+   2076    2535    2535    2535 ?             -1 Ssl   1000   0:01 /usr/libexec/gsd-sharing
+   2076    2543    2543    2543 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-smartcard
+   2076    2549    2549    2549 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-sound
+   2076    2555    2555    2555 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-wacom
+   2076    2573    2573    2573 ?             -1 Ssl   1000   0:00 /usr/libexec/gvfs-udisks2-volume-monitor
+   2294    2574    2294    2294 ?             -1 Sl    1000   0:00 /usr/libexec/gsd-disk-utility-notify
+   2076    2596    2116    2116 ?             -1 Sl    1000   0:00 /usr/libexec/goa-daemon
+   2294    2608    2294    2294 ?             -1 Sl    1000   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+   2510    2683    2510    2510 ?             -1 Sl    1000   0:00 /usr/libexec/ibus-memconf
+   2510    2684    2510    2510 ?             -1 Sl    1000   0:02 /usr/libexec/ibus-extension-gtk3
+   2076    2699    2116    2116 ?             -1 Sl    1000   0:00 /usr/libexec/ibus-portal
+   2076    2708    2116    2116 ?             -1 Sl    1000   0:00 /usr/libexec/goa-identity-service
+   2076    2726    2524    2524 ?             -1 Sl    1000   0:00 /usr/libexec/gsd-printer
+   2076    2740    2740    2740 ?             -1 Ssl   1000   0:00 /usr/libexec/evolution-calendar-factory
+   2076    2743    2743    2743 ?             -1 Ssl   1000   0:00 /usr/libexec/gvfs-goa-volume-monitor
+   2076    2753    2753    2753 ?             -1 Ssl   1000   0:01 /usr/libexec/gvfs-afc-volume-monitor
+   2076    2762    2762    2762 ?             -1 Ssl   1000   0:00 /usr/libexec/gvfs-mtp-volume-monitor
+   2076    2774    2774    2774 ?             -1 Ssl   1000   0:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+   2076    2779    2779    2779 ?             -1 Ssl   1000   0:00 /usr/libexec/evolution-addressbook-factory
+   2510    2817    2510    2510 ?             -1 Sl    1000   0:02 /usr/libexec/ibus-engine-simple
+   2283    2846    2283    2283 ?             -1 Sl    1000   0:00 /usr/libexec/gvfsd-trash --spawner :1.20 /org/gtk/gvfs/exec_spaw/0
+   2076    2867    2867    2867 ?             -1 Ssl   1000   0:01 /usr/libexec/xdg-desktop-portal
+   2076    2875    2875    2875 ?             -1 SNsl  1000   0:00 /usr/libexec/tracker-miner-fs-3
+   2076    2877    2877    2877 ?             -1 Ssl   1000   0:00 /usr/libexec/xdg-desktop-portal-gnome
+   2076    2903    2116    2116 ?             -1 Sl    1000   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.ScreenSaver
+   2076    2938    2938    2938 ?             -1 Ssl   1000   0:00 /usr/libexec/xdg-desktop-portal-gtk
+   2076    3002    3002    3002 ?             -1 Ssl   1000   0:00 /usr/libexec/gvfsd-metadata
+   2342    3026    2342    2342 ?             -1 SLl   1000   6:05 /opt/yandex/browser/yandex_browser
+   3026    3033    2342    2342 ?             -1 S     1000   0:00 cat
+   3026    3034    2342    2342 ?             -1 S     1000   0:00 cat
+   2076    3036    3035    3035 ?             -1 Sl    1000   0:00 /opt/yandex/browser/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/olesya/.config/yandex-browser/Crash Reports --metrics-dir=/home/olesya/.config/yandex-browser --url=https://crash-reports.browser.yandex.net/submit --annotation=channel=stable --annotation=lsb-release=Ubuntu 24.04 LTS --annotation=plat=Linux --annotation=prod=Yandex_Linux --annotation=ver=24.7.3.1253 --initial-client-fd=5 --shared-client-connection
+   2076    3038    3037    3037 ?             -1 Sl    1000   0:00 /opt/yandex/browser/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/olesya/.config/yandex-browser/Crash Reports --url=https://crash-reports.browser.yandex.net/submit --annotation=channel=stable --annotation=lsb-release=Ubuntu 24.04 LTS --annotation=plat=Linux --annotation=prod=Yandex_Linux --annotation=ver=24.7.3.1253 --initial-client-fd=4 --shared-client-connection
+   3026    3044    2342    2342 ?             -1 S     1000   0:00 /opt/yandex/browser/yandex_browser --type=zygote --no-zygote-sandbox --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable
+   3026    3045    2342    2342 ?             -1 S     1000   0:00 /opt/yandex/browser/yandex_browser-sandbox /opt/yandex/browser/yandex_browser --type=zygote --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable
+   3045    3046    2342    2342 ?             -1 S     1000   0:00 /opt/yandex/browser/yandex_browser --type=zygote --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable
+   3046    3048    2342    2342 ?             -1 S     1000   0:00 /opt/yandex/browser/yandex_browser --type=zygote --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable
+   2342    3050    2342    2342 ?             -1 Sl    1000   4:05 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.JZ9FV2 -listenfd 4 -listenfd 5 -displayfd 6 -initfd 7 -byteswappedclients
+   2076    3060    3060    3060 ?             -1 Ssl   1000   0:00 /usr/libexec/gsd-xsettings
+   2076    3083    3060    3060 ?             -1 Sl    1000   0:00 /usr/libexec/ibus-x11
+   2342    3088    2342    2342 ?             -1 Sl    1000   0:12 /usr/libexec/mutter-x11-frames
+   3044    3124    2342    2342 ?             -1 Sl    1000  11:30 /opt/yandex/browser/yandex_browser --type=gpu-process --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable --gpu-preferences=WAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAEAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAGAAAAAAAAAAYAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --gpu-process-kind=sandboxed --shared-files --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3026    3129    2342    2342 ?             -1 Sl    1000   2:44 /opt/yandex/browser/yandex_browser --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ru --service-sandbox-type=none --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable --process-name=Network Service --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048    3143    2342    2342 ?             -1 Sl    1000   0:04 /opt/yandex/browser/yandex_browser --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ru --service-sandbox-type=utility --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable --process-name=Storage Service --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048    3260    2342    2342 ?             -1 Sl    1000   0:15 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --ya-custo-process --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=9 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=24889580 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048    3268    2342    2342 ?             -1 Sl    1000   0:02 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --ya-custo-process --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=10 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=24897326 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048    3320    2342    2342 ?             -1 Sl    1000   0:01 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=13 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=25190348 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048    3328    2342    2342 ?             -1 Sl    1000   0:01 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=15 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=25198643 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048    3340    2342    2342 ?             -1 Sl    1000   0:01 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=17 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=25207563 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3026    3696    2342    2342 ?             -1 Sl    1000   2:07 /opt/yandex/browser/yandex_browser --type=utility --utility-sub-type=audio.mojom.AudioService --lang=ru --service-sandbox-type=none --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable --process-name=Audio Service --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   2294    3807    2294    2294 ?             -1 Sl    1000   0:00 /usr/bin/update-notifier
+   3048    3929    2342    2342 ?             -1 Sl    1000   0:27 /opt/yandex/browser/yandex_browser --type=utility --utility-sub-type=qr_code.mojom.QRCodeService --lang=ru --service-sandbox-type=service --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable --process-name=QR code service --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048    4001    2342    2342 ?             -1 Sl    1000   0:02 /opt/yandex/browser/yandex_browser --type=utility --utility-sub-type=autofill.mojom.TflPredictionsService --lang=ru --service-sandbox-type=utility --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable --process-name=Autofill Tfl Predictions --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      1    4140    4140    4140 ?             -1 Ss       0   0:00 /usr/sbin/cupsd -l
+      1    4144    4144    4144 ?             -1 Ssl    115   0:00 /usr/sbin/cups-browsed
+      1    4191    4191    4191 ?             -1 Ssl      0   0:03 /usr/libexec/fwupd/fwupd
+      2    4199       0       0 ?             -1 I        0   0:01 [kworker/15:2-mm_percpu_wq]
+   2076    4878    4878    4878 ?             -1 SLsl  1000   1:02 /snap/code/170/usr/share/code/code --no-sandbox --force-user-env
+   4878    4880    4878    4878 ?             -1 S     1000   0:00 /snap/code/170/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
+   4878    4881    4878    4878 ?             -1 S     1000   0:00 /snap/code/170/usr/share/code/code --type=zygote --no-sandbox
+   2076    4899    4898    4898 ?             -1 Sl    1000   0:00 /snap/code/170/usr/share/code/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/olesya/.config/Code/Crashpad --url=appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=abeecb0e-c53d-49ef-9dcf-35944cad7d7b&iid=abeecb0e-c53d-49ef-9dcf-35944cad7d7b&sid=abeecb0e-c53d-49ef-9dcf-35944cad7d7b --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.94.0 --annotation=lsb-release=Ubuntu 24.04 LTS --annotation=plat=Linux --annotation=prod=Electron --annotation=ver=30.5.1 --initial-client-fd=49 --shared-client-connection
+   4878    4923    4878    4878 ?             -1 Sl    1000   0:03 /snap/code/170/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --crashpad-handler-pid=4899 --enable-crash-reporter=7421c707-0245-4648-b7e8-e38b96069b52,no_channel --user-data-dir=/home/olesya/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15033468468175949148,3783420543801490552,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+   4878    4999    4878    4878 ?             -1 Sl    1000   3:31 /snap/code/170/usr/share/code/code --type=gpu-process --disable-gpu-sandbox --no-sandbox --crashpad-handler-pid=4899 --enable-crash-reporter=7421c707-0245-4648-b7e8-e38b96069b52,no_channel --user-data-dir=/home/olesya/.config/Code --gpu-preferences=WAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAABgAAAAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAGAAAAAAAAAAYAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --use-gl=angle --use-angle=swiftshader-webgl --shared-files --field-trial-handle=3,i,15033468468175949148,3783420543801490552,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+   4878    5051    4878    4878 ?             -1 Sl    1000   0:09 /snap/code/170/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --no-sandbox --crashpad-handler-pid=4899 --enable-crash-reporter=7421c707-0245-4648-b7e8-e38b96069b52,no_channel --user-data-dir=/home/olesya/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15033468468175949148,3783420543801490552,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+      2    6167       0       0 ?             -1 S        0   0:00 [irq/140-mei_me]
+   2076    7501    2116    2116 ?             -1 Sl    1000   0:07 /usr/bin/nautilus --gapplication-service
+   2283    7611    2283    2283 ?             -1 Sl    1000   0:00 /usr/libexec/gvfsd-recent --spawner :1.20 /org/gtk/gvfs/exec_spaw/1
+   2076    7731    2116    2116 ?             -1 Sl    1000   0:34 /usr/bin/evince /home/olesya/Загрузки/Правила_демон_Стивен.pdf
+   2076    7740    2116    2116 ?             -1 Sl    1000   0:00 /usr/libexec/evinced
+   3048   10575    2342    2342 ?             -1 Sl    1000   7:20 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=209 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=13859245228 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      2   10761       0       0 ?             -1 I        0   0:03 [kworker/14:2-rcu_gp]
+   3048   10832    2342    2342 ?             -1 Sl    1000   0:03 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=218 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=14379315777 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048   10868    2342    2342 ?             -1 Sl    1000   0:22 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=229 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=14384159956 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      2   11129       0       0 ?             -1 I        0   0:00 [kworker/7:1-mm_percpu_wq]
+      2   11201       0       0 ?             -1 I        0   0:00 [kworker/6:2-cgroup_destroy]
+      2   11621       0       0 ?             -1 I        0   0:00 [kworker/5:2-cgroup_destroy]
+   2076   11678   11678   11678 ?             -1 Ssl   1000   0:17 /usr/libexec/gnome-terminal-server
+  11678   11686   11686   11686 pts/0      13328 Ss    1000   0:00 bash
+      2   11715       0       0 ?             -1 I        0   0:00 [kworker/7:0-mm_percpu_wq]
+      2   11740       0       0 ?             -1 I<       0   0:04 [kworker/u33:1-rb_allocator]
+      2   11867       0       0 ?             -1 I        0   0:00 [kworker/1:0]
+      2   12026       0       0 ?             -1 I        0   0:03 [kworker/u32:0-events_unbound]
+      2   12074       0       0 ?             -1 I        0   0:00 [kworker/9:2-events]
+      2   12084       0       0 ?             -1 I        0   0:00 [kworker/2:2-mm_percpu_wq]
+      2   12145       0       0 ?             -1 I        0   0:00 [kworker/3:2-mm_percpu_wq]
+   4881   12209    4878    4878 ?             -1 Sl    1000   1:10 /snap/code/170/usr/share/code/code --type=renderer --crashpad-handler-pid=4899 --enable-crash-reporter=7421c707-0245-4648-b7e8-e38b96069b52,no_channel --user-data-dir=/home/olesya/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-path=/snap/code/170/usr/share/code/resources/app --enable-sandbox --enable-blink-features=HighlightAPI --no-sandbox --disable-gpu-compositing --disable-blink-features=FontMatchingCTMigration, --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=11 --time-ticks-at-unix-epoch=-1728334350532198 --launch-time-ticks=16959098784 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15033468468175949148,3783420543801490552,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version --vscode-window-config=vscode:3f9783e7-9ab7-45c5-bf68-82e9857bf22f
+   4878   12228    4878    4878 ?             -1 Sl    1000   0:03 /snap/code/170/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --no-sandbox --dns-result-order=ipv4first --inspect-port=0 --crashpad-handler-pid=4899 --enable-crash-reporter=7421c707-0245-4648-b7e8-e38b96069b52,no_channel --user-data-dir=/home/olesya/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15033468468175949148,3783420543801490552,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+   4878   12238    4878    4878 ?             -1 Sl    1000   0:01 /snap/code/170/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --no-sandbox --crashpad-handler-pid=4899 --enable-crash-reporter=7421c707-0245-4648-b7e8-e38b96069b52,no_channel --user-data-dir=/home/olesya/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15033468468175949148,3783420543801490552,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+      2   12305       0       0 ?             -1 I        0   0:00 [kworker/8:1]
+      2   12332       0       0 ?             -1 I        0   0:00 [kworker/10:2-mm_percpu_wq]
+      2   12337       0       0 ?             -1 I        0   0:00 [kworker/13:0-mm_percpu_wq]
+   2342   12365    2342    2342 ?             -1 Sl    1000   0:01 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+      2   12497       0       0 ?             -1 I        0   0:00 [kworker/4:0-events]
+      2   12498       0       0 ?             -1 I        0   0:00 [kworker/8:2-events]
+      2   12611       0       0 ?             -1 I        0   0:01 [kworker/u32:4-events_power_efficient]
+      2   12633       0       0 ?             -1 I        0   0:01 [kworker/u32:5-i915]
+  12228   12649    4878    4878 ?             -1 Sl    1000   0:00 /snap/code/170/usr/share/code/code /snap/code/170/usr/share/code/resources/app/extensions/markdown-language-features/dist/serverWorkerMain --node-ipc --clientProcessId=12228
+   4878   12669    4878    4878 ?             -1 Sl    1000   0:01 /snap/code/170/usr/share/code/code --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --no-sandbox --crashpad-handler-pid=4899 --enable-crash-reporter=7421c707-0245-4648-b7e8-e38b96069b52,no_channel --user-data-dir=/home/olesya/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,15033468468175949148,3783420543801490552,262144 --enable-features=kWebSQLAccess --disable-features=CalculateNativeWinOcclusion,SpareRendererForSitePerProcess --variations-seed-version
+      2   12707       0       0 ?             -1 I        0   0:00 [kworker/0:0-mm_percpu_wq]
+      2   12732       0       0 ?             -1 I        0   0:00 [kworker/4:2-cgroup_destroy]
+      2   12762       0       0 ?             -1 I        0   0:00 [kworker/15:1-mm_percpu_wq]
+      2   12766       0       0 ?             -1 I        0   0:00 [kworker/5:1-mm_percpu_wq]
+      2   12779       0       0 ?             -1 I        0   0:00 [kworker/12:3-mm_percpu_wq]
+      2   12790       0       0 ?             -1 I        0   0:00 [kworker/1:2-mm_percpu_wq]
+      2   12799       0       0 ?             -1 I<       0   0:01 [kworker/u33:0-rb_allocator]
+      2   12800       0       0 ?             -1 I        0   0:00 [kworker/11:1-events]
+   3048   12855    2342    2342 ?             -1 Sl    1000   0:01 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=268 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=18382035119 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      2   12883       0       0 ?             -1 I        0   0:01 [kworker/14:1-i915-unordered]
+      2   12911       0       0 ?             -1 I        0   0:00 [kworker/10:1-mm_percpu_wq]
+      2   12942       0       0 ?             -1 I        0   0:00 [kworker/u32:1-events_unbound]
+      2   12945       0       0 ?             -1 I        0   0:00 [kworker/6:1-mm_percpu_wq]
+      2   12953       0       0 ?             -1 I        0   0:00 [kworker/9:0-mm_percpu_wq]
+      2   12959       0       0 ?             -1 I        0   0:00 [kworker/0:1]
+      2   12979       0       0 ?             -1 I<       0   0:00 [kworker/u33:2-i915_flip]
+      2   12980       0       0 ?             -1 I        0   0:00 [kworker/11:0-events]
+   3048   12995    2342    2342 ?             -1 Sl    1000   0:01 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --extension-process --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=273 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=18733760275 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      2   13014       0       0 ?             -1 I        0   0:00 [kworker/3:1-mm_percpu_wq]
+      2   13040       0       0 ?             -1 I        0   0:00 [kworker/2:1]
+      2   13043       0       0 ?             -1 I        0   0:00 [kworker/13:2-mm_percpu_wq]
+      2   13047       0       0 ?             -1 I        0   0:00 [kworker/12:2-events]
+      2   13098       0       0 ?             -1 I        0   0:00 [kworker/4:1-events]
+      2   13108       0       0 ?             -1 I        0   0:00 [kworker/5:0-events]
+      2   13148       0       0 ?             -1 I        0   0:00 [kworker/8:0-mm_percpu_wq]
+   3048   13168    2342    2342 ?             -1 Sl    1000   0:00 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=280 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=18955474903 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      2   13192       0       0 ?             -1 I        0   0:00 [kworker/11:2-mm_percpu_wq]
+      2   13196       0       0 ?             -1 I        0   0:00 [kworker/14:0]
+   3048   13225    2342    2342 ?             -1 Sl    1000   0:00 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=283 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=19118017518 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      2   13255       0       0 ?             -1 I        0   0:00 [kworker/6:0]
+      2   13274       0       0 ?             -1 I        0   0:00 [kworker/7:2]
+   3048   13275    2342    2342 ?             -1 Sl    1000   0:11 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --extension-process --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=284 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=19200005392 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+   3048   13297    2342    2342 ?             -1 Sl    1000   0:00 /opt/yandex/browser/yandex_browser --type=utility --utility-sub-type=proxy_resolver.mojom.ProxyResolverFactory --lang=ru --service-sandbox-type=service --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --change-stack-guard-on-fork=enable --process-name=Прокси-сервер V8 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+      2   13308       0       0 ?             -1 I        0   0:00 [kworker/12:0-events]
+   3048   13311    2342    2342 ?             -1 Sl    1000   0:00 /opt/yandex/browser/yandex_browser --type=renderer --user-id=40e020fe-f9b6-4965-9361-4d34a7a5c125 --brand-id=yandex --crashpad-handler-pid=3036 --enable-crash-reporter=ba0221f3-c927-42f0-8db0-bb1993c454cb,stable --help-url=https://api.browser.yandex.ru/redirect/help/ --user-agent-info --web-ntp-url-for-renderer=https://webntp.yandex.ru/ --translate-security-origin=https://browser.translate.yandex.net/ --enable-instaserp --change-stack-guard-on-fork=enable --lang=ru --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=286 --time-ticks-at-unix-epoch=-1728334350532199 --launch-time-ticks=19212849473 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,9378035990413448216,9660647804042428357,262144 --enable-features=InstallerNewIdentity2024 --variations-seed-version
+  11686   13328   13328   11686 pts/0      13328 R+    1000   0:00 ps -axj
