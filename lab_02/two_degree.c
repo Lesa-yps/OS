@@ -13,7 +13,7 @@ int main(void)
 	}
 	else
 	{
-		printf("Error with input sum\n");
+		printf("Error with input two degree\n");
 	}
     return 0;
 }

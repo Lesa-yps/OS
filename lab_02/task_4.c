@@ -12,10 +12,10 @@ int main(void)
 {
 	pid_t cpid[N];
 
-	const char *mess_give[N + 1] = {"AAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "BBB"};
+	const char *mess_give[N] = {"AAAAAAAAAAAAAAAAAAAAAAAAAAAAA", "BBB"};
 	char *mess_take = malloc(SIZE_OF_BUF);
 
-	int fd[N+1];
+	int fd[N];
 	// Создаем канал (fd[0] - чтение, fd[1] - запись)
     if (pipe(fd) == -1)
 	{
@@ -75,7 +75,7 @@ int main(void)
     close(fd[1]);
 	for (int i = 0; i < N; i++)
 	{
-		memset(mess_take, 0, SIZE_OF_BUF); // Обнуляем буфер    перед чтением
+		memset(mess_take, 0, SIZE_OF_BUF); // Обнуляем буфер перед чтением
 		// Читаем сообщение
         read(fd[0], mess_take, strlen((mess_give)[i]));
         printf("Parent received massage: %s\n", mess_take);

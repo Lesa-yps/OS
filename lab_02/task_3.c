@@ -10,29 +10,32 @@ int main(void)
 {
 	pid_t w;
     int wstatus;
-	pid_t arr_childpid[N];
+	pid_t cpid[N];
 	const char *exec_programs[N] = {"./sum.exe", "./two_degree.exe"};
 	for (int i = 0; i < N; i++)
 	{
-		arr_childpid[i] = fork();
-		if (arr_childpid[i] == -1)
+		cpid[i] = fork();
+		if (cpid[i] == -1)
 		{
             perror("fork");
        		exit(EXIT_FAILURE);
       	}
-		if (arr_childpid[i] == 0)
+		if (cpid[i] == 0)
 		{
 			printf("Child: pid = %d, ppid = %d, gr = %d\n", getpid(), getppid(), getpgrp());
-			execl(exec_programs[i], exec_programs[i], (char *)NULL);
-            perror("execl failed"); // If exec fails
-            exit(EXIT_FAILURE);		
+			if (execl(exec_programs[i], exec_programs[i], (char *)NULL) == -1) // If execl fails
+			{
+				perror("execl failed");
+				exit(EXIT_FAILURE);
+			}	
 		}
 		else
-			printf("Parent: pid = %d, childpid = %d, gr = %d\n", getpid(), arr_childpid[i], getpgrp());
+			printf("Parent: pid = %d, childpid = %d, gr = %d\n", getpid(), cpid[i], getpgrp());
 	}
-	for (int i = 0; i < N; i++) {
+	for (int i = 0; i < N; i++)
+	{
         do {
-            w = waitpid(arr_childpid[i], &wstatus, WUNTRACED | WCONTINUED);
+            w = waitpid(cpid[i], &wstatus, WUNTRACED | WCONTINUED);
             if (w == -1) {
                 perror("waitpid");
                 exit(EXIT_FAILURE);
