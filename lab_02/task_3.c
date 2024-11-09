@@ -11,7 +11,7 @@ int main(void)
 	pid_t w;
     int wstatus;
 	pid_t cpid[N];
-	const char *exec_programs[N] = {"./sum.exe", "./two_degree.exe"};
+	const char *exec_programs[N] = {"./movement.exe", "./area.exe"};
 	for (int i = 0; i < N; i++)
 	{
 		cpid[i] = fork();
