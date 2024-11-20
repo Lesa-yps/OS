@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <errno.h>
+#include <time.h>
 
 // семафоры
 #define FLAG_EDIT 0
@@ -59,25 +61,32 @@ void signal_handler(int sig_num)
 }
 
 // ПИСАТЕЛЬ
-void writer(int *addr, const int semid)
+void writer(char *addr, const int semid)
 {
-    srand(getpid());
+    srand(time(NULL));
     while (sig_flag)
     {
         sleep(rand() % 4 + 1);
         // изменение значений 6-и семафоров (start_write)
         if (semop(semid, start_write, 6) == -1)
         {
-            printf("Error: pid = %d semop (start write)\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop (start write) pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
-        // увеличиваем цифру и выводим
-        (*addr)++;
-        printf("Writer %d inc -> %d\n", getpid(), *addr);
+        // увеличиваем букву и выводим
+        if (*addr == 'z')
+            *addr = 'a';
+        else
+            (*addr)++;
+        printf("Writer %d -> %c\n", getpid(), *addr);
         // изменение значений 2-ух семафоров (stop_write)
         if (semop(semid, stop_write, 2) == -1)
         {
-            printf("Error: pid = %d semop (stop write)\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop (stop write) pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
     }
@@ -85,21 +94,25 @@ void writer(int *addr, const int semid)
 }
 
 // ЧИТАТЕЛЬ
-void reader(int *addr, const int semid)
+void reader(char *addr, const int semid)
 {
-    srand(getpid());
+    srand(time(NULL));
     while (sig_flag)
     {
         sleep(rand() % 3 + 1);
         if (semop(semid, start_read, 5) == -1)
         {
-            printf("Error: pid = %d semop (start read)\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop (start read) pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
-        printf("Reader %d -> %d\n", getpid(), *addr);
+        printf("Reader %d -> %c\n", getpid(), *addr);
         if (semop(semid, stop_read, 1) == -1)
         {
-            printf("Error: pid = %d semop (stop read)\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop (stop read) pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
     }
@@ -151,14 +164,14 @@ int main(void)
     }
     // Вызов shmat() подключает сегмент общей памяти System V с идентификатором shmid к адресному пространству вызывающего процесса
     // Если значение shmaddr равно NULL, то система выбирает подходящий (неиспользуемый) адрес для подключения сегмента
-    int *addr = shmat(shmid, NULL, 0);
+    char *addr = shmat(shmid, NULL, 0);
     // При успешном выполнении shmat() возвращается адрес подключённого общего сегмента памяти; при ошибке возвращается (void *) -1, а в errno содержится код ошибки.
-    if (addr == (int *) -1)
+    if (addr == (char *) -1)
     {
         perror("Error: shmat.\n");
         exit(1);
     }
-    *addr = 0;
+    *addr = 'a';
     // ftok - преобразовывает имя файла и идентификатор проекта в ключ для системных вызовов
     key_t semkey = ftok("file.txt", 2);
     if (semkey == (key_t) -1)
@@ -221,17 +234,11 @@ int main(void)
             exit(EXIT_FAILURE);
         }
         if (WIFEXITED(wait_status))
-		{
-            printf("%d exited, status=%d\n", cpid[i], WEXITSTATUS(wait_status));
-        }
+            printf("%d exited, status=%d, errno %d\n", cpid[i], WEXITSTATUS(wait_status), errno);
 		else if (WIFSIGNALED(wait_status))
-		{
-            printf("%d killed by signal %d\n", cpid[i], WTERMSIG(wait_status));
-        }
+            printf("%d killed by signal %d, errno %d\n", cpid[i], WTERMSIG(wait_status), errno);
 		else if (WIFSTOPPED(wait_status))
-		{
-            printf("%d stopped by signal %d\n", cpid[i], WSTOPSIG(wait_status));
-        }
+            printf("%d stopped by signal %d, errno %d\n", cpid[i], WSTOPSIG(wait_status), errno);
 	}
     // Вызов shmdt() отключает сегмент общей памяти, находящийся по адресу addr, от адресного пространства вызывающего процесса
     if (shmdt((void *) addr) == -1)

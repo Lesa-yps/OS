@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <errno.h>
+#include <time.h>
 
 #define SIZE_BUF 26 /*размер буфера*/
 
@@ -15,7 +17,7 @@
 #define BUFF_EMPTY 2
 
 #define PROD_CNT 3
-#define CONS_CNT 4
+#define CONS_CNT 8
 
 // операции над семафорами (уменьшение и увеличение)
 #define P -1
@@ -45,7 +47,7 @@ void signal_handler(int sig_num)
 // ПРОИЗВОДИТЕЛЬ
 void producer(char *addr, const int semid)
 {
-    srand(getpid());
+    srand(time(NULL));
     // разбираем буфер на составляющие
     char **ptr_prod = (char **) addr;
     char **ptr_cons = ptr_prod + sizeof(char);
@@ -54,11 +56,13 @@ void producer(char *addr, const int semid)
     while (sig_flag)
     {
         // рандомная задержка
-        sleep(rand() % 2 + 1);
+        sleep(rand() % 5 + 1);
         // изменение значений 2-ух семафоров (start_produce)
         if (semop(semid, start_produce, 2) == -1)
         {
-            printf("Error: pid = %d semop.\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
         // записываем букву в буфер и выводим её
@@ -78,7 +82,9 @@ void producer(char *addr, const int semid)
         // изменение значений 2-ух семафоров (stop_produce)
         if (semop(semid, stop_produce, 2) == -1)
         {
-            printf("Error: pid = %d semop.\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
     }
@@ -88,7 +94,7 @@ void producer(char *addr, const int semid)
 // ПОТРЕБИТЕЛЬ
 void consumer(char *addr, const int semid)
 {
-    srand(getpid());
+    srand(time(NULL));
     // разбираем буфер на составляющие
     char **ptr_prod = (char **) addr;
     char **ptr_cons = ptr_prod + sizeof(char);
@@ -97,11 +103,13 @@ void consumer(char *addr, const int semid)
     while (sig_flag)
     {
         // рандомная задержка
-        sleep(rand() % 3 + 1);
+        sleep(rand() % 4 + 1);
         // изменение значений 2-ух семафоров (start_consume)
         if (semop(semid, start_consume, 2) == -1)
         {
-            printf("Error: pid = %d semop.\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
         // выводим букву из буфера
@@ -113,7 +121,9 @@ void consumer(char *addr, const int semid)
         // изменение значений 2-ух семафоров (stop_consume)
         if (semop(semid, stop_consume, 2) == -1)
         {
-            printf("Error: pid = %d semop.\n", getpid());
+            char err_msg[100];
+            sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+            perror(err_msg);
             exit(1);
         }
     }
@@ -232,17 +242,11 @@ int main(void)
             exit(EXIT_FAILURE);
         }
         if (WIFEXITED(wait_status))
-		{
-            printf("%d exited, status=%d\n", cpid[i], WEXITSTATUS(wait_status));
-        }
+            printf("%d exited, status=%d, errno %d\n", cpid[i], WEXITSTATUS(wait_status), errno);
 		else if (WIFSIGNALED(wait_status))
-		{
-            printf("%d killed by signal %d\n", cpid[i], WTERMSIG(wait_status));
-        }
+            printf("%d killed by signal %d, errno %d\n", cpid[i], WTERMSIG(wait_status), errno);
 		else if (WIFSTOPPED(wait_status))
-		{
-            printf("%d stopped by signal %d\n", cpid[i], WSTOPSIG(wait_status));
-        }
+            printf("%d stopped by signal %d, errno %d\n", cpid[i], WSTOPSIG(wait_status), errno);
 	}
     // Вызов shmdt() отключает сегмент общей памяти, находящийся по адресу prod_ptr, от адресного пространства вызывающего процесса
     if (shmdt((void *) addr) == -1)

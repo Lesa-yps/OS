@@ -1,3 +1,3 @@
-run: main.c
-    gcc main.c
-    ./a.out
+# run: main.c
+#     gcc main.c
+#     ./a.out

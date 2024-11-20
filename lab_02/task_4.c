@@ -16,7 +16,7 @@ int main(void)
 	char *mess_take = malloc(SIZE_OF_BUF);
 
 	int fd[N];
-	// Создаем канал (fd[0] - чтение, fd[1] - запись)
+	// Создается канал (fd[0] - чтение, fd[1] - запись)
     if (pipe(fd) == -1)
 	{
         perror("pipe");
@@ -34,9 +34,9 @@ int main(void)
 		if (cpid[i] == 0)
 		{
 			/*child*/
-			// Закрываем конец чтения
+			// Закрывается конец чтения
 			close(fd[0]);
-			// записываем сообщение
+			// записывается сообщение
             write(fd[1], (mess_give)[i], strlen((mess_give)[i]));
 			printf("Child pid = %d sent massage %s to parent ppid = %d\n", getpid(), (mess_give)[i], getppid());
             exit(EXIT_SUCCESS); 
@@ -71,12 +71,12 @@ int main(void)
         }
 	}
 
-	// Закрываем конец записи
+	// Закрывается конец записи
     close(fd[1]);
 	for (int i = 0; i < N; i++)
 	{
-		memset(mess_take, 0, SIZE_OF_BUF); // Обнуляем буфер перед чтением
-		// Читаем сообщение
+		memset(mess_take, 0, SIZE_OF_BUF); // Обнуляется буфер перед чтением
+		// Читается сообщение
         read(fd[0], mess_take, strlen((mess_give)[i]));
         printf("Parent received massage: %s\n", mess_take);
 	}

@@ -25,7 +25,7 @@ int main(void)
 			printf("Child: pid = %d, ppid = %d, gr = %d\n", getpid(), getppid(), getpgrp());
 			if (execl(exec_programs[i], exec_programs[i], (char *)NULL) == -1) // If execl fails
 			{
-				perror("execl failed");
+				perror("Can't execl.");
 				exit(EXIT_FAILURE);
 			}	
 		}
