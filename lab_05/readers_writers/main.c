@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
+#include <time.h>
+#include <stdint.h>
 
 // кол-во читателей и писателей
 #define WRIT_CNT 4
@@ -34,8 +36,10 @@ void start_read(void)
     InterlockedIncrement(&read_queue);
 
     // Если есть пишущий писатель или ждущие писатели, ждем разрешения на чтение
-    if (active_writer || (WaitForSingleObject(can_write, 0) == WAIT_OBJECT_0 && write_queue))
+    if (sig_flag && (active_writer || (WaitForSingleObject(can_write, 0) == WAIT_OBJECT_0 && write_queue)))
         WaitForSingleObject(can_read, INFINITE);
+    if (! sig_flag)
+        return;
     
     // Блокируем доступ к общей переменной
     WaitForSingleObject(mutex_num, INFINITE);
@@ -47,7 +51,7 @@ void start_read(void)
     // Разрешаем чтение
     SetEvent(can_read);
     // Освобождаем мьютекс
-    Releasemutex_num(mutex_num);
+    ReleaseMutex(mutex_num);
 }
 
 void stop_read(void)
@@ -70,8 +74,10 @@ void start_write(void)
     InterlockedIncrement(&write_queue);
 
     // Если есть активный читатель или писатель, ждем разрешения на запись
-    if (active_writer || (active_readers > 0))
+    if (sig_flag && (active_writer || (active_readers > 0)))
         WaitForSingleObject(can_write, INFINITE);
+    if (! sig_flag)
+        return;
 
     // Уменьшаем количество ожидающих писателей
     InterlockedDecrement(&write_queue);
@@ -98,15 +104,17 @@ DWORD WINAPI func_writer(CONST LPVOID lpParams)
 {
     srand(time(NULL));
     // Идентификатор читателя
-    int writer_id = (int)lpParams;
+    intptr_t writer_id = (intptr_t)lpParams;
     while (sig_flag)
     {
-        sleep(rand() % 4 + 1);
+        Sleep((rand() % 4 + 1) * 1000);
         // Ожидание разрешения на запись
         start_write();
+        if (!sig_flag)
+            break;
         // Запись нового значения
         num++;
-        printf("Writer %d inc -> %d\n", writer_id, num);
+        printf("Writer %ld inc -> %d\n", writer_id, num);
         // Завершаем запись
         stop_write();
     }
@@ -118,13 +126,15 @@ DWORD WINAPI func_reader(CONST LPVOID lpParams)
 {
     srand(time(NULL));
     // Идентификатор читателя
-    int reader_id = (int)lpParams;
+    intptr_t reader_id = (intptr_t)lpParams;
     while (sig_flag)
     {
-        sleep(rand() % 3 + 1);
+        Sleep((rand() % 3 + 1) * 1000);
         // Ожидание разрешения на чтение
         start_read();
-        printf("Reader %d -> %d\n", reader_id, num);
+        if (!sig_flag)
+            break;
+        printf("Reader %ld -> %d\n", reader_id, num);
         // Завершаем чтение
         stop_read();
     }
@@ -135,9 +145,12 @@ DWORD WINAPI func_reader(CONST LPVOID lpParams)
 // Устанавливаем флаг при получении сигнала
 int WINAPI signal_handler(DWORD signal) 
 {
+    printf("SIGNAL");
     if (signal == CTRL_C_EVENT) 
     {
         sig_flag = 0;
+        SetEvent(can_read);  // Разрешить заблокированным потокам завершиться
+        SetEvent(can_write); // Аналогично для писателей
         printf("Program catch Ctrl-C.\n");
     }
     return 1;
@@ -149,14 +162,14 @@ int main(void)
     setbuf(stdout, NULL);
 
     // Устанавливаем обработчик сигнала
-	if (! SetConsoleCtrlHandler(ConsoleHandler, TRUE)) 
+	if (! SetConsoleCtrlHandler(signal_handler, TRUE)) 
     {
     	perror("Error: set signal handler.\n");
     	exit(EXIT_FAILURE);
     }
 
-    HANDLE threads_read[READ_CNT]; // Массив для потоков читателей
-    HANDLE threads_write[WRIT_CNT]; // Массив для потоков писателей
+    HANDLE threads_read[READ_CNT]; // Массив для дескрипторов потоков читателей
+    HANDLE threads_write[WRIT_CNT]; // Массив для дескрипторов потоков писателей
 
     // Создаем мьютекс для синхронизации доступа к общей переменной
     if ((mutex_num = CreateMutex(NULL, FALSE, NULL)) == NULL)
@@ -166,8 +179,8 @@ int main(void)
     }
 
     // Создаем события для синхронизации чтения и записи
-    can_read = CreateEvent(NULL, FALSE, FALSE, NULL);
-    can_write = CreateEvent(NULL, FALSE, FALSE, NULL);
+    can_read = CreateEvent(NULL, TRUE, FALSE, NULL); // со сбросом вручную
+    can_write = CreateEvent(NULL, FALSE, FALSE, NULL); // с автосбросом
     if (can_read == NULL || can_write == NULL)
     {
         perror("Error: CreateEvent");
@@ -177,21 +190,23 @@ int main(void)
     // ЗАПУСКАЕМ ПРОЦЕССЫ-ПИСАТЕЛИ
     for (int i = 0; i < WRIT_CNT; i++)
     {
-        threads_write[i] = CreateThread(NULL, 0, func_writer, (LPVOID)i, 0, NULL);
+        threads_write[i] = CreateThread(NULL, 0, func_writer, (LPVOID)(intptr_t)i, 0, NULL);
         if (threads_write[i] == NULL)
-        {
-            perror("Error: CreateThread");
+        {           
+            DWORD errorCode = GetLastError();
+            printf("FError: CreateThread. Error code: %lu\n", errorCode);
             return 1;
         }
     }
 
     // ЗАПУСКАЕМ ПРОЦЕССЫ-ЧИТАТЕЛИ
-    for (int i = 0 i < READ_CNT; i++)
+    for (int i = 0; i < READ_CNT; i++)
     {
-        threads_read[i] = CreateThread(NULL, 0, func_reader, (LPVOID)i, 0, NULL);
+        threads_read[i] = CreateThread(NULL, 0, func_reader, (LPVOID)(intptr_t)i, 0, NULL);
         if (threads_read[i] == NULL)
         {
-            perror("Error: CreateThread");
+            DWORD errorCode = GetLastError();
+            printf("FError: CreateThread. Error code: %lu\n", errorCode);
             return 1;
         }
     }

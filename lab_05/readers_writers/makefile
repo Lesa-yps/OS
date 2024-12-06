@@ -1,3 +1,3 @@
 run: main.c
-    gcc main.c
-    ./a.out
+	gcc -o a.exe main.c
+	#./a.exe

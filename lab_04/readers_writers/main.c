@@ -66,7 +66,7 @@ void writer(char *addr, const int semid)
     srand(time(NULL));
     while (sig_flag)
     {
-        sleep(rand() % 4 + 1);
+        sleep(rand() % 3 + 1);
         // изменение значений 6-и семафоров (start_write)
         if (semop(semid, start_write, 6) == -1)
         {
@@ -99,7 +99,7 @@ void reader(char *addr, const int semid)
     srand(time(NULL));
     while (sig_flag)
     {
-        sleep(rand() % 3 + 1);
+        sleep(rand() % 2 + 1);
         if (semop(semid, start_read, 5) == -1)
         {
             char err_msg[100];
