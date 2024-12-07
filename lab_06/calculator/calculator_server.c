@@ -33,6 +33,8 @@ calculator_proc_1_svc(struct CALCULATOR *argp, struct svc_req *rqstp)
 		default:
 			break;
 	}
+	printf("Ко мне обратился клиент c запросом %.2f %s %.2f = %.2f\n", 
+           argp->arg1, argp->op == 0 ? "+" : argp->op == 1 ? "-" : argp->op == 2 ? "*" : "/", argp->arg2, result.result);
 	/* -<<< Add to test */
 
 	return &result;

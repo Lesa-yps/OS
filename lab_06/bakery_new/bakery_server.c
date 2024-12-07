@@ -5,7 +5,6 @@
  */
 
 #include "bakery.h"
-#include <pthread.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -15,11 +14,12 @@
 static int numbers[MAX_CLIENTS] = { false };
 
 
-int get_number_1_svc(struct svc_req *rqstp)
+int *
+get_number_1_svc(void *argp, struct svc_req *rqstp)
 {
-	static int result = 0;
+	static int  result;
 
-    for (int i = 1; i < MAX_CLIENTS; i++)
+	for (int i = 1; i < MAX_CLIENTS; i++)
         if (numbers[i])
             result = i;
     result++;
@@ -30,14 +30,14 @@ int get_number_1_svc(struct svc_req *rqstp)
 	return &result;
 }
 
-
-float *bakery_service_1_svc(struct REQUEST *argp, struct svc_req *rqstp)
+float *
+bakery_service_1_svc(struct REQUEST *argp, struct svc_req *rqstp)
 {
 	static float  result;
 
-    int cur_num = argp->number;
-	for (int i = 0; i < MAX_CLIENTS; i++)
-        while (numbers[i] != false && (i < cur_num);
+	int cur_num = argp->number;
+	for (int i = 0; i < cur_num; i++)
+        while (numbers[i] != false);
 
     // вычисление выражения
     int c_op;

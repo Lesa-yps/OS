@@ -5,24 +5,21 @@
  */
 
 #include "bakery.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/wait.h>
 #include <time.h>
-#include <unistd.h>
 
 
-void bakery_prog_1(char *host)
+void
+bakery_prog_1(char *host)
 {
 	CLIENT *clnt;
+	char *get_number_1_arg;
 	struct REQUEST request;
 	float *result_2;
 	int *result_1;
 
 #ifndef	DEBUG
-	clnt = clnt_create(host, BAKERY_PROG, BAKERY_VER, "udp");
-	if (clnt == NULL)
-	{
+	clnt = clnt_create (host, BAKERY_PROG, BAKERY_VER, "udp");
+	if (clnt == NULL) {
 		clnt_pcreateerror (host);
 		exit (1);
 	}
@@ -31,11 +28,11 @@ void bakery_prog_1(char *host)
 	srand(time(NULL));
     usleep(rand() % 1000 + 5000000);
 
-	result_1 = get_number_1(clnt);
-	if (result_1 == (int *) NULL)
+	result_1 = get_number_1((void*)&get_number_1_arg, clnt);
+	if (result_1 == (int *) NULL) {
 		clnt_perror (clnt, "call failed");
-
-    request.number = *result_1;
+	}
+	request.number = *result_1;
 
 	printf("Client receive number: %d\n", request.number);
 
@@ -66,24 +63,23 @@ void bakery_prog_1(char *host)
     }
 
     printf("Client with number %d: %.2f %c %.2f = %.2f\n", request.number, request.arg1, c_op, request.arg2, *result_2);
-
 #ifndef	DEBUG
-	clnt_destroy(clnt);
+	clnt_destroy (clnt);
 #endif	 /* DEBUG */
 }
 
 
-int main (int argc, char *argv[])
+int
+main (int argc, char *argv[])
 {
 	char *host;
 
-	if (argc < 2)
-	{
+	if (argc < 2) {
 		printf ("usage: %s server_host\n", argv[0]);
 		exit (1);
 	}
 	host = argv[1];
 	while (1)
-        bakery_prog_1(host);
-	exit (0);
+		bakery_prog_1 (host);
+exit (0);
 }
