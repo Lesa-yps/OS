@@ -39,7 +39,7 @@ char producer(void)
     if (semop(semid, start_produce, 2) == -1)
     {
         char err_msg[100];
-        sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+        sprintf(err_msg, "Error: semop  errno %d", errno);
         perror(err_msg);
         exit(1);
     }
@@ -61,7 +61,7 @@ char producer(void)
     if (semop(semid, stop_produce, 2) == -1)
     {
         char err_msg[100];
-        sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+        sprintf(err_msg, "Error: semop errno %d", errno);
         perror(err_msg);
         exit(1);
     }
@@ -74,7 +74,7 @@ char consumer(void)
     if (semop(semid, start_consume, 2) == -1)
     {
         char err_msg[100];
-        sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+        sprintf(err_msg, "Error: semop errno %d", errno);
         perror(err_msg);
         exit(1);
     }
@@ -92,7 +92,7 @@ char consumer(void)
     if (semop(semid, stop_consume, 2) == -1)
     {
         char err_msg[100];
-        sprintf(err_msg, "Error: semop pid = %d, errno %d", getpid(), errno);
+        sprintf(err_msg, "Error: semop errno %d", errno);
         perror(err_msg);
         exit(1);
     }
