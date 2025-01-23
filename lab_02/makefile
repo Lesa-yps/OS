@@ -8,9 +8,9 @@ task_2: task_2.c
 	$(CC) $<
 	./a.out
 
-task_3: task_3.c area.c movement.c
-	$(CC) area.c -o area.exe -lm
-	$(CC) movement.c -o movement.exe -lm
+task_3: task_3.c sum.c two_degree.c
+	$(CC) sum.c -lm
+	$(CC) two_degree.c -lm
 	$(CC) $<
 	./a.out
 
