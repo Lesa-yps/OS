@@ -1,0 +1,18 @@
+Операционные Системы 5_сем МГТУ экзамен
+
+https://github.com/Sunshine-ki/BMSTU5_OS/wiki
+https://puzzling-author-d18.notion.site/2023-7c131671d4dc46c6adf35f198b1e1b4b
+https://cheddar-numeric-9f9.notion.site/46f0b6ae6fb04a5f8bed849cfbfef6ec
+https://docs.google.com/document/d/1z7QX90oB0UuGNmEASorDgP4O-O6bvE3K/edit
+
+учебник:
+https://github.com/vxlabinfo/lib/blob/master/windows/%5BRU%5D%20Руссинович%20Устройство%20Microsoft.%206-е%20издание.%20Часть%201.pdf
+
+курс лекций Мезенцева:
+https://docs.yandex.ru/docs/view?tm=1736631289&tld=ru&lang=ru&name=fel16E418.pdf&text=базовая%20теория%20операционных%20систем&url=https%3A%2F%2Flib.madi.ru%2Ffel%2Ffel1%2Ffel16E418.pdf&lr=213&mime=pdf&l10n=ru&sign=948ecd1e374f336b346e09dcc32d5877&keyno=0&nosw=1&serpParams=tm%3D1736631289%26tld%3Dru%26lang%3Dru%26name%3Dfel16E418.pdf%26text%3D%25D0%25B1%25D0%25B0%25D0%25B7%25D0%25BE%25D0%25B2%25D0%25B0%25D1%258F%2B%25D1%2582%25D0%25B5%25D0%25BE%25D1%2580%25D0%25B8%25D1%258F%2B%25D0%25BE%25D0%25BF%25D0%25B5%25D1%2580%25D0%25B0%25D1%2586%25D0%25B8%25D0%25BE%25D0%25BD%25D0%25BD%25D1%258B%25D1%2585%2B%25D1%2581%25D0%25B8%25D1%2581%25D1%2582%25D0%25B5%25D0%25BC%26url%3Dhttps%253A%2F%2Flib.madi.ru%2Ffel%2Ffel1%2Ffel16E418.pdf%26lr%3D213%26mime%3Dpdf%26l10n%3Dru%26sign%3D948ecd1e374f336b346e09dcc32d5877%26keyno%3D0%26nosw%3D1
+
+Многопотоковые сервера в среде Linux. Техника разработки:
+https://www.opennet.ru/base/dev/rpc_example.txt.html
+
+Взаимодействие между cpu и ведущим pic:
+https://studfile.net/preview/7413544/page:19/
